@@ -39,7 +39,7 @@ async function loadCase(index, autoplay = false, updateURL = true) {
   $('next').disabled = index === cases.length-1;
   $('answers').innerHTML = item.answers.map((answer, i) => {
     const featured = answer.id === 'gemini_camdistill';
-    return `<article class="answer-card${featured ? ' featured' : ''}" data-arm="${esc(answer.id)}"><div class="arm-header"><h3>${esc(answer.name)}</h3>${featured ? '<span class="verified">✓ 人工确认</span>' : `<span class="arm-number">0${i+1}</span>`}</div><p class="arm-summary">${esc(answer.summary)}</p><p class="camera-text" lang="en">${esc(answer.camera)}</p>${answer.full ? `<details><summary>查看完整 caption 原文</summary><pre lang="en">${esc(answer.full)}</pre></details>` : ''}</article>`;
+    return `<article class="answer-card${featured ? ' featured' : ''}" data-arm="${esc(answer.id)}"><div class="arm-header"><h3>${esc(answer.name)}</h3>${featured ? '<span class="verified">✓ 运镜正确</span>' : `<span class="arm-number">0${i+1}</span>`}</div><p class="arm-summary">${esc(answer.summary)}</p><p class="camera-text" lang="en">${esc(answer.camera)}</p>${answer.full ? `<details><summary>查看完整 caption 原文</summary><pre lang="en">${esc(answer.full)}</pre></details>` : ''}</article>`;
   }).join('');
   document.title = `${item.sample} · shot ${item.shot}｜镜头运动六案例对比`;
   video.poster = item.poster;

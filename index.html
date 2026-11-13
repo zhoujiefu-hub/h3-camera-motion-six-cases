@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="六个经人工确认的运镜案例，对比 Gemini、CamDistill 与 ViPE 的六种方案。支持循环播放、慢放和逐案例分享。">
+  <meta name="description" content="从实验对比中选取 CamDistill 正确识别的代表案例，对比 Gemini、CamDistill 与 ViPE 的六种方案。">
   <meta name="theme-color" content="#173f36">
   <title>镜头运动 · 六案例对比</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23173f36'/%3E%3Cpath d='M17 19h30v26H17z' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Cpath d='m27 26 12 6-12 6z' fill='%23bce4ca'/%3E%3C/svg%3E">
@@ -17,13 +17,13 @@
     <a class="report-link" href="https://app.notion.com/p/4176f4c21fde8023a125f376287484cc" target="_blank" rel="noopener">实验汇报 <span aria-hidden="true">↗</span></a>
   </header>
   <main id="compare">
-    <div class="intro"><div><p class="eyebrow">RYAN CASE STUDY · 06 CLIPS / 06 METHODS</p><h1>看见细微的镜头运动<span>。</span></h1><p class="intro-copy">同一个镜头，六种方案。播放原片，对照每一组的运镜判断。</p></div><div class="review-mark"><span class="status-dot"></span>6 例均已人工复核<span class="review-sub">确认 Gemini + CamDistill 的运镜判断</span></div></div>
+    <div class="intro"><div><p class="eyebrow">RYAN · SELECTED CASES / 06 METHODS</p><h1>看见细微的镜头运动<span>。</span></h1><p class="intro-copy">这里选取 CamDistill 正确识别的代表案例，展示六种方案的运镜判断差异。</p></div><div class="review-mark"><span class="status-dot"></span>CamDistill 正确识别的代表案例<span class="review-sub">从实验对比结果中挑选</span></div></div>
     <nav id="case-nav" class="case-nav" aria-label="选择案例"><p class="loading">正在载入六个案例…</p></nav>
     <section id="case-content" hidden>
       <div class="case-heading"><div><p id="case-number" class="eyebrow"></p><h2 id="case-title"></h2><p id="case-meta" class="case-meta"></p></div><button type="button" id="share" class="button quiet">复制此案例链接 <span aria-hidden="true">↗</span></button></div>
       <div class="comparison-layout">
         <section id="comparison" class="comparison" aria-label="六种方案的运镜描述">
-          <div class="finding"><span class="finding-icon" aria-hidden="true">✓</span><div><p class="finding-label">人工确认 · Gemini + CamDistill</p><h3 id="case-motion"></h3><p id="case-observation"></p></div></div>
+          <div class="finding"><span class="finding-icon" aria-hidden="true">✓</span><div><p class="finding-label">正确识别 · Gemini + CamDistill</p><h3 id="case-motion"></h3><p id="case-observation"></p></div></div>
           <div class="section-label"><span>六组输出</span><span>中文摘要 + 英文原始描述</span></div>
           <div id="answers" class="answer-grid"></div>
         </section>
@@ -39,8 +39,8 @@
     </section>
     <div id="load-error" class="error load-error" hidden>案例暂时未能载入。<button type="button" id="reload" class="button">重新载入</button></div>
   </main>
-  <footer><p>展示案例按方案差异筛选；六例的人工结论仅针对运镜判断，不代表全量准确率或完整 caption 正确率。</p><div><span>整数帧切片修正版 · 2026.11.13</span><span class="keyboard-note">← → 切换案例</span></div></footer>
+  <footer><p>展示片段选自 CamDistill 运镜判断正确的代表案例，用于说明方法差异。整体实验结果见汇报。</p><div><span>整数帧切片修正版 · 2026.11.13</span><span class="keyboard-note">← → 切换案例</span></div></footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <dialog id="plot-dialog"><div class="dialog-header"><div><h2 id="plot-title">ViPE 轨迹图</h2><p>每个镜头单独缩放，图中运动幅度请结合原视频判断。</p></div><button type="button" id="close-dialog" class="button">关闭 ×</button></div><img id="plot-image" alt="当前镜头的 ViPE 相机轨迹"><p class="dialog-note">轨迹图是 ViPE 图像分支的辅助输入。运镜标签与 caption 由各方案独立产生。</p></dialog>
+  <dialog id="plot-dialog"><div class="dialog-header"><div><h2 id="plot-title">ViPE 轨迹图</h2><p>ViPE 逐镜头估计相机位姿，绘成 PNG 后作为额外图像输入 Gemini。</p></div><button type="button" id="close-dialog" class="button">关闭 ×</button></div><img id="plot-image" alt="当前镜头的 ViPE 相机轨迹"><p class="dialog-note">紫色表示开始、红色表示结束；线框表示相机位置与朝向，坐标为镜头起点的右 / 前 / 上方向。每个镜头单独缩放，运动幅度需结合原视频判断。</p></dialog>
 </body>
 </html>
