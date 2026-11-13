@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="六个经人工确认的运镜案例，对比 Gemini、CamDistill 与 ViPE 的六种方案。支持循环播放、慢放和逐案例分享。">
+  <meta name="theme-color" content="#173f36">
+  <title>镜头运动 · 六案例对比</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23173f36'/%3E%3Cpath d='M17 19h30v26H17z' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Cpath d='m27 26 12 6-12 6z' fill='%23bce4ca'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#comparison">跳到方案对比</a>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">↗</span><span>CAMERA MOTION <span class="brand-divider">/</span> 运镜感知实验</span></div>
+    <a class="report-link" href="https://app.notion.com/p/4176f4c21fde8023a125f376287484cc" target="_blank" rel="noopener">实验汇报 <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="compare">
+    <div class="intro"><div><p class="eyebrow">RYAN CASE STUDY · 06 CLIPS / 06 METHODS</p><h1>看见细微的镜头运动<span>。</span></h1><p class="intro-copy">同一个镜头，六种方案。播放原片，对照每一组的运镜判断。</p></div><div class="review-mark"><span class="status-dot"></span>6 例均已人工复核<span class="review-sub">确认 Gemini + CamDistill 的运镜判断</span></div></div>
+    <nav id="case-nav" class="case-nav" aria-label="选择案例"><p class="loading">正在载入六个案例…</p></nav>
+    <section id="case-content" hidden>
+      <div class="case-heading"><div><p id="case-number" class="eyebrow"></p><h2 id="case-title"></h2><p id="case-meta" class="case-meta"></p></div><button type="button" id="share" class="button quiet">复制此案例链接 <span aria-hidden="true">↗</span></button></div>
+      <div class="comparison-layout">
+        <section id="comparison" class="comparison" aria-label="六种方案的运镜描述">
+          <div class="finding"><span class="finding-icon" aria-hidden="true">✓</span><div><p class="finding-label">人工确认 · Gemini + CamDistill</p><h3 id="case-motion"></h3><p id="case-observation"></p></div></div>
+          <div class="section-label"><span>六组输出</span><span>中文摘要 + 英文原始描述</span></div>
+          <div id="answers" class="answer-grid"></div>
+        </section>
+        <aside class="player-panel" aria-label="当前案例视频">
+          <div class="player-top"><span class="status-dot"></span><span>原视频切片</span><span id="duration" class="duration"></span></div>
+          <div class="video-stage"><video id="video" controls playsinline muted loop preload="metadata" aria-label="当前案例视频"></video></div>
+          <div class="player-controls"><label class="loop-label"><input type="checkbox" id="loop" checked>循环</label><div class="speed-controls" role="group" aria-label="播放速度"><button type="button" data-rate="0.5" aria-pressed="false">0.5×</button><button type="button" data-rate="1" aria-pressed="true" class="active">1×</button><button type="button" data-rate="1.5" aria-pressed="false">1.5×</button></div><button class="restart" id="restart" type="button" aria-label="从头播放">↺</button></div>
+          <p class="clip-note">无声切片 · 仅观察运镜</p><p id="playback-error" class="error" hidden></p>
+          <div class="case-stepper"><button type="button" id="prev" class="button">← 上一例</button><span id="case-position"></span><button type="button" id="next" class="button">下一例 →</button></div>
+          <button type="button" id="show-plot" class="plot-button">查看此镜头的 ViPE 轨迹图 <span aria-hidden="true">↗</span></button>
+        </aside>
+      </div>
+    </section>
+    <div id="load-error" class="error load-error" hidden>案例暂时未能载入。<button type="button" id="reload" class="button">重新载入</button></div>
+  </main>
+  <footer><p>展示案例按方案差异筛选；六例的人工结论仅针对运镜判断，不代表全量准确率或完整 caption 正确率。</p><div><span>整数帧切片修正版 · 2026.11.13</span><span class="keyboard-note">← → 切换案例</span></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="plot-dialog"><div class="dialog-header"><div><h2 id="plot-title">ViPE 轨迹图</h2><p>每个镜头单独缩放，图中运动幅度请结合原视频判断。</p></div><button type="button" id="close-dialog" class="button">关闭 ×</button></div><img id="plot-image" alt="当前镜头的 ViPE 相机轨迹"><p class="dialog-note">轨迹图是 ViPE 图像分支的辅助输入。运镜标签与 caption 由各方案独立产生。</p></dialog>
+</body>
+</html>

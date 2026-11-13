@@ -1,0 +1,401 @@
+{
+  "title": "镜头运动 · 六案例对比",
+  "cases": [
+    {
+      "code": "A1",
+      "id": "item10__s4",
+      "sample": "item10",
+      "shot": 4,
+      "start": 15.042,
+      "end": 16.292,
+      "duration": 1.25,
+      "title": "轻微上仰",
+      "motion": "缓慢上仰",
+      "observation": "观察人物身后的背景和画面边缘。Gemini 将这段运动写成静止，CamDistill 分支识别出了轻微上仰。",
+      "video": "media/item10__s4.mp4",
+      "poster": "media/item10__s4.jpg",
+      "plot": "plots/item10__s4.png",
+      "answers": [
+        {
+          "id": "gemini",
+          "name": "Gemini",
+          "summary": "静止",
+          "camera": "At 00:15.042, the camera cuts to a medium close-up, slightly low angle, static shot.",
+          "full": "At 00:15.042, the camera cuts to a medium close-up, slightly low angle, static shot. S1 wraps his arm defensively around S2, looking up with a grimace. S2 looks distressed, parting her lips as she says, <d>[English] you misunderstood.</d>"
+        },
+        {
+          "id": "gemini_camdistill",
+          "name": "Gemini + CamDistill",
+          "summary": "缓慢上仰",
+          "camera": "At 00:15.042, the camera cuts to a medium shot of the couple, executing a slow tilt up.",
+          "full": "At 00:15.042, the camera cuts to a medium shot of the couple, executing a slow tilt up. S3 sits tensely, glaring upward with clenched fists and a furiously set jaw. S4 holds his arm, looking up pleadingly. The audio seamlessly continues from the previous shot. S4 says, <d>[English] <scenetrans> you misunderstood.</d> S3 breathes heavily, his posture rigid."
+        },
+        {
+          "id": "gemini_vipe_text",
+          "name": "Gemini + ViPE 文本",
+          "summary": "静止",
+          "camera": "At 00:15.042, the camera cuts to a static medium close-up of the bruised man (S1) and Christina (S2).",
+          "full": "At 00:15.042, the camera cuts to a static medium close-up of the bruised man (S1) and Christina (S2). The audio seamlessly continues from the previous shot. The man (S1) raises his arm defensively. Christina (S2) looks up terrified, raising her hands as she pleads, <d>[English] <scenetrans>you misunderstood.</d>"
+        },
+        {
+          "id": "gemini_vipe_plot",
+          "name": "Gemini + ViPE 轨迹图",
+          "summary": "轻微推近",
+          "camera": "At 00:15.042, the camera cuts to a medium close-up of the man (S2), pushing in slightly.",
+          "full": "At 00:15.042, the camera cuts to a medium close-up of the man (S2), pushing in slightly. He leans forward protectively, his expression tense, while the seated woman clutches his arm in alarm. He looks up at the standing woman (S1) and replies defensively, <d>[English] you misunderstood.</d>"
+        },
+        {
+          "id": "camdistill_only",
+          "name": "CamDistill 单独",
+          "summary": "缓慢上仰",
+          "camera": "15.0–16.2s Tilt Up (slow)",
+          "full": ""
+        },
+        {
+          "id": "vipe_only",
+          "name": "ViPE 单独",
+          "summary": "静止",
+          "camera": "15.0–16.0s Static Shot",
+          "full": ""
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "arm": "gemini_camdistill",
+        "scope": "camera_motion",
+        "source": "作者逐例人工确认",
+        "date": "2026-11-13"
+      }
+    },
+    {
+      "code": "A2",
+      "id": "item10__s5",
+      "sample": "item10",
+      "shot": 5,
+      "start": 16.292,
+      "end": 20.875,
+      "duration": 4.583,
+      "title": "先静止，再推近",
+      "motion": "静止 → 缓慢推近",
+      "observation": "重点看后半段：相机先保持静止，再缓慢推近。CamDistill 分支保留了这两个运动阶段。",
+      "video": "media/item10__s5.mp4",
+      "poster": "media/item10__s5.jpg",
+      "plot": "plots/item10__s5.png",
+      "answers": [
+        {
+          "id": "gemini",
+          "name": "Gemini",
+          "summary": "静止",
+          "camera": "At 00:16.292, the camera cuts to a medium close-up, eye-level angle, static shot.",
+          "full": "At 00:16.292, the camera cuts to a medium close-up, eye-level angle, static shot. S3 holds the jagged glass, breathing heavily. The off-screen man (S1) says, <d>[English] Know your place.</d> S3 glares, tightening her grip on the glass, and responds, <d>[English] Touch my friend again, and your perfect scandal becomes public tonight.</d>"
+        },
+        {
+          "id": "gemini_camdistill",
+          "name": "Gemini + CamDistill",
+          "summary": "先静止，再缓慢推近",
+          "camera": "At 00:16.292, the camera cuts to a medium shot of S1, holding a static shot before slowly pushing in.",
+          "full": "At 00:16.292, the camera cuts to a medium shot of S1, holding a static shot before slowly pushing in. She wears a long-sleeve black velvet dress, her fur coat removed. She holds the jagged, broken stem of the champagne flute, pointing it menacingly. She says, <d>[English] Know your place. Touch my friend again, and your perfect scandal becomes public tonight.</d> She narrows her eyes, gripping the broken glass tightly."
+        },
+        {
+          "id": "gemini_vipe_text",
+          "name": "Gemini + ViPE 文本",
+          "summary": "静止",
+          "camera": "At 00:16.292, the camera cuts to a static medium close-up of the woman (S3) in the fur coat.",
+          "full": "At 00:16.292, the camera cuts to a static medium close-up of the woman (S3) in the fur coat. She wields the jagged neck of the bottle, pointing it threateningly. Narrowing her eyes in fury, she snarls, <d>[English] Know your place. Touch my friend again, and your perfect scandal becomes public tonight.</d> She tightens her grip."
+        },
+        {
+          "id": "gemini_vipe_plot",
+          "name": "Gemini + ViPE 轨迹图",
+          "summary": "推近",
+          "camera": "At 00:16.292, the shot changes to a medium close-up of the standing woman (S1), pushing in as she aggressively aims the sharp, broken glass stem directly forward.",
+          "full": "At 00:16.292, the shot changes to a medium close-up of the standing woman (S1), pushing in as she aggressively aims the sharp, broken glass stem directly forward. Her face twists in anger as she snarls, <d>[English] Know your place. Touch my friend again, and your perfect scandal becomes public tonight.</d>"
+        },
+        {
+          "id": "camdistill_only",
+          "name": "CamDistill 单独",
+          "summary": "先静止，再缓慢推近",
+          "camera": "16.3–18.8s Static Shot → 18.8–20.9s Push In (slow)",
+          "full": ""
+        },
+        {
+          "id": "vipe_only",
+          "name": "ViPE 单独",
+          "summary": "静止",
+          "camera": "16.3–20.8s Static Shot",
+          "full": ""
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "arm": "gemini_camdistill",
+        "scope": "camera_motion",
+        "source": "作者逐例人工确认",
+        "date": "2026-11-13"
+      }
+    },
+    {
+      "code": "A3",
+      "id": "item16__s7",
+      "sample": "item16",
+      "shot": 7,
+      "start": 13.208,
+      "end": 15.042,
+      "duration": 1.834,
+      "title": "拉远",
+      "motion": "中速拉远",
+      "observation": "观察人物在画面中逐渐缩小、周围空间增加。这一例三个增强方案都识别出了拉远，Gemini 基线写成静止。",
+      "video": "media/item16__s7.mp4",
+      "poster": "media/item16__s7.jpg",
+      "plot": "plots/item16__s7.png",
+      "answers": [
+        {
+          "id": "gemini",
+          "name": "Gemini",
+          "summary": "静止",
+          "camera": "At 00:13.208, the camera cuts to a wide static shot.",
+          "full": "At 00:13.208, the camera cuts to a wide static shot. The young woman floats directly in front of the red-glowing clock face. She now has large, dark feathered wings extending behind her and wears a spiked black crown with dark roses. A glowing red energy ring circles her waist, while translucent pink bubbles containing floating clock faces drift around her in the moody atmosphere as her wings gently hover."
+        },
+        {
+          "id": "gemini_camdistill",
+          "name": "Gemini + CamDistill",
+          "summary": "中速拉远",
+          "camera": "At 00:13.208, the camera cuts to a wide shot, pulling out at medium speed.",
+          "full": "At 00:13.208, the camera cuts to a wide shot, pulling out at medium speed. The young female character floats magically in mid-air in front of the giant, glowing red clock tower. Massive, dark feathered wings extend from her back. The red magical ribbon continues to swirl around her. Translucent pink bubbles containing tiny glowing clock faces drift through the air around her as she holds her scepter steadily and her dress billows slightly."
+        },
+        {
+          "id": "gemini_vipe_text",
+          "name": "Gemini + ViPE 文本",
+          "summary": "缓慢拉远",
+          "camera": "At 00:13.208, the camera cuts to a wide shot, pulling out slowly.",
+          "full": "At 00:13.208, the camera cuts to a wide shot, pulling out slowly. The woman now floats in mid-air in front of the massive, glowing red clock face of the gothic tower. Huge, dark feathered wings extend from her back, and the red magical trail encircles her waist. Translucent bubbles containing golden clock faces drift gracefully around her in the dark, atmospheric setting, as the giant clock behind her emits a fiery crimson glow."
+        },
+        {
+          "id": "gemini_vipe_plot",
+          "name": "Gemini + ViPE 轨迹图",
+          "summary": "拉远",
+          "camera": "At 00:13.208, the camera cuts to a WS, low angle, pull out.",
+          "full": "At 00:13.208, the camera cuts to a WS, low angle, pull out. The girl hovers mid-air in front of the red glowing clock face. She now has massive, feathery black and red wings spread wide. Translucent pink clock-face bubbles float around her. Epic backlighting silhouettes her wings, with soft front fill light on her dress. The red energy ring spins, her wings give a slight flap, and she grasps the golden staff firmly."
+        },
+        {
+          "id": "camdistill_only",
+          "name": "CamDistill 单独",
+          "summary": "中速拉远",
+          "camera": "13.2–15.0s Pull Out (medium)",
+          "full": ""
+        },
+        {
+          "id": "vipe_only",
+          "name": "ViPE 单独",
+          "summary": "拉远",
+          "camera": "13.2–14.7s Pull Out",
+          "full": ""
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "arm": "gemini_camdistill",
+        "scope": "camera_motion",
+        "source": "作者逐例人工确认",
+        "date": "2026-11-13"
+      }
+    },
+    {
+      "code": "B1",
+      "id": "item47__s2",
+      "sample": "item47",
+      "shot": 2,
+      "start": 4.083,
+      "end": 6.542,
+      "duration": 2.459,
+      "title": "复合运动后停止",
+      "motion": "左摇 + 上仰 → 静止",
+      "observation": "观察背景的连续变化和后半段的停止。六组对方向、复合运动与抖动强度给出了不同描述。",
+      "video": "media/item47__s2.mp4",
+      "poster": "media/item47__s2.jpg",
+      "plot": "plots/item47__s2.png",
+      "answers": [
+        {
+          "id": "gemini",
+          "name": "Gemini",
+          "summary": "静止",
+          "camera": "At 00:04.083, the camera cuts to a medium close-up, eye level, static shot.",
+          "full": "At 00:04.083, the camera cuts to a medium close-up, eye level, static shot. S1 remains kneeling beside the man in the vest, who breathes heavily on the right edge of the frame. S1 turns her head off-screen right with a defensive expression, her brow furrowed, and says, <d>[English] I'm not going back.</d>"
+        },
+        {
+          "id": "gemini_camdistill",
+          "name": "Gemini + CamDistill",
+          "summary": "左摇 + 上仰，随后静止",
+          "camera": "At 00:04.083, the camera cuts to a medium close-up from a high angle, slowly panning left and tilting up, then holds a static shot.",
+          "full": "At 00:04.083, the camera cuts to a medium close-up from a high angle, slowly panning left and tilting up, then holds a static shot. The mermaid (S1) looks down at the struggling man (S2), then turns her head sharply up and left to address an off-screen presence. Her blue eyes are wide, her wet hair clinging to her shoulders. She says firmly, <d>[English] I'm not going back.</d>"
+        },
+        {
+          "id": "gemini_vipe_text",
+          "name": "Gemini + ViPE 文本",
+          "summary": "强烈抖动 + 推近 + 机位下移 + 上仰",
+          "camera": "At 00:04.083, the camera cuts to a close-up, straight-on angle, shaking strongly as it pushes in, pedestals down, and tilts up on the mermaid (S1).",
+          "full": "At 00:04.083, the camera cuts to a close-up, straight-on angle, shaking strongly as it pushes in, pedestals down, and tilts up on the mermaid (S1). She remains kneeling in the center with S2 partially visible behind her right shoulder. S1 turns her head away from him, looking up and off-screen right with a sudden defiant glare. S1 states firmly, <d>[English] I'm not going back.</d>"
+        },
+        {
+          "id": "gemini_vipe_plot",
+          "name": "Gemini + ViPE 轨迹图",
+          "summary": "推近 + 右摇",
+          "camera": "At 00:04.083, the camera cuts to a medium close-up, eye-level, and pushes in while panning right.",
+          "full": "At 00:04.083, the camera cuts to a medium close-up, eye-level, and pushes in while panning right. The red-haired woman (S1) looks up sharply to her right, her blue eyes wide with a mix of fear and determination. The man is partially visible on the right edge of the frame, kneeling. The wet wooden deck and thick dark ropes blur behind her. She says, <d>[English] I'm not going back.</d> Her chest heaves slightly."
+        },
+        {
+          "id": "camdistill_only",
+          "name": "CamDistill 单独",
+          "summary": "左摇 + 上仰 → 静止",
+          "camera": "4.1–5.2s Pan Left (slow) + Tilt Up (slow) → 5.2–6.6s Static Shot",
+          "full": ""
+        },
+        {
+          "id": "vipe_only",
+          "name": "ViPE 单独",
+          "summary": "多阶段运动，整体强烈抖动",
+          "camera": "4.1–4.6s Static Shot → 4.6–5.1s Pedestal Down, Push In, Tilt Up → 5.1–6.1s Static Shot；整体 Shake Strongly",
+          "full": ""
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "arm": "gemini_camdistill",
+        "scope": "camera_motion",
+        "source": "作者逐例人工确认",
+        "date": "2026-11-13"
+      }
+    },
+    {
+      "code": "B2",
+      "id": "item14__s2",
+      "sample": "item14",
+      "shot": 2,
+      "start": 4.75,
+      "end": 7.25,
+      "duration": 2.5,
+      "title": "轻微变焦放大",
+      "motion": "缓慢 Zoom In",
+      "observation": "观察面部逐渐放大。CamDistill 分支描述为缓慢变焦，其他方案分别给出静止或推近与机位上移。",
+      "video": "media/item14__s2.mp4",
+      "poster": "media/item14__s2.jpg",
+      "plot": "plots/item14__s2.png",
+      "answers": [
+        {
+          "id": "gemini",
+          "name": "Gemini",
+          "summary": "静止",
+          "camera": "At 00:04.750, the camera cuts to a close-up, static shot of the young woman (S1).",
+          "full": "At 00:04.750, the camera cuts to a close-up, static shot of the young woman (S1). She rests her chin on her right hand, her fingers pressing lightly against her cheek. She stares off-screen to the right with a contemplative expression, blinking slowly. The background features blurred white ceiling panels and diffused lights. Soft, even lighting highlights the freckles on her face."
+        },
+        {
+          "id": "gemini_camdistill",
+          "name": "Gemini + CamDistill",
+          "summary": "缓慢变焦放大",
+          "camera": "At 00:04.750, the camera cuts to a close-up, eye-level view of the woman (S1) as the camera slowly zooms in on her face.",
+          "full": "At 00:04.750, the camera cuts to a close-up, eye-level view of the woman (S1) as the camera slowly zooms in on her face. Her pale skin reveals faint freckles, and her blue eyes stare blankly toward the right. She rests her right cheek heavily on her hand, her expression bored. Soft, diffused lighting highlights her features against the softly blurred background of the office. She blinks once slowly."
+        },
+        {
+          "id": "gemini_vipe_text",
+          "name": "Gemini + ViPE 文本",
+          "summary": "静止",
+          "camera": "At 00:04.750, the camera cuts to an eye-level close-up static shot of the woman (S1).",
+          "full": "At 00:04.750, the camera cuts to an eye-level close-up static shot of the woman (S1). The office background is heavily blurred. She has stopped typing and rests her chin on her right hand, her fingers curled against her cheek. Bright daylight illuminates her face. She stares ahead with a pensive expression, blinking slowly once as her shoulders slump slightly."
+        },
+        {
+          "id": "gemini_vipe_plot",
+          "name": "Gemini + ViPE 轨迹图",
+          "summary": "推近 + 机位上移",
+          "camera": "At 00:04.750, the camera cuts to a close-up of the woman (S1) as it slowly pushes in and pedestals up.",
+          "full": "At 00:04.750, the camera cuts to a close-up of the woman (S1) as it slowly pushes in and pedestals up. She rests her chin heavily on her right hand, staring blankly ahead. A blue fabric lanyard is visible around her neck. The office background is softly blurred under warm overhead fluorescent lighting. She blinks slowly, her lips slightly parted in a weary expression."
+        },
+        {
+          "id": "camdistill_only",
+          "name": "CamDistill 单独",
+          "summary": "缓慢变焦放大",
+          "camera": "4.8–7.2s Zoom In (slow)",
+          "full": ""
+        },
+        {
+          "id": "vipe_only",
+          "name": "ViPE 单独",
+          "summary": "静止",
+          "camera": "4.8–6.8s Static Shot",
+          "full": ""
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "arm": "gemini_camdistill",
+        "scope": "camera_motion",
+        "source": "作者逐例人工确认",
+        "date": "2026-11-13"
+      }
+    },
+    {
+      "code": "C1",
+      "id": "item41__s1",
+      "sample": "item41",
+      "shot": 1,
+      "start": 0.0,
+      "end": 11.0,
+      "duration": 11.0,
+      "title": "商品展示的多阶段运镜",
+      "motion": "静止、推近与俯仰等多阶段运动",
+      "observation": "观察手部展示鞋子的全过程，同时参考车内背景。CamDistill 分支给出了静止、下俯、推近、右摇与对焦变化等阶段。",
+      "video": "media/item41__s1.mp4",
+      "poster": "media/item41__s1.jpg",
+      "plot": "plots/item41__s1.png",
+      "answers": [
+        {
+          "id": "gemini",
+          "name": "Gemini",
+          "summary": "静止，手转动鞋子",
+          "camera": "Cinematic, close-up, static shot. The hand slowly rotates the sneaker to display the back heel, revealing the embroidered text \"D'Lites\" in silver, then tilts the chunky sole toward the camera before smoothly returning the shoe to a side-profile view.",
+          "full": "Cinematic, close-up, static shot. Inside the dark interior of a vehicle, a fair-skinned left hand with slender fingers holds up a chunky Skechers sneaker in the center foreground. The shoe features a white and light grey suede and mesh upper, metallic silver paneling, and a thick white midsole with grey tread sections. A metallic silver \"S\" logo is clearly visible on the side profile, and a shiny silver flower-shaped charm adorns the white laces. In the lower right corner, the person's right foot rests on the dark floorboard, wearing an identical sneaker paired with thick, ribbed white socks. The background reveals a blurred black car dashboard with a textured surface and a circular air vent on the right. Through the window, an out-of-focus street with a parked car is visible under bright, natural daylight. The hand slowly rotates the sneaker to display the back heel, revealing the embroidered text \"D'Lites\" in silver, then tilts the chunky sole toward the camera before smoothly returning the shoe to a side-profile view. The foot in the bottom right corner shifts slightly as the hand actively adjusts its grip on the footwear."
+        },
+        {
+          "id": "gemini_camdistill",
+          "name": "Gemini + CamDistill",
+          "summary": "多阶段静止、下俯、推近、右摇及跟随",
+          "camera": "Cinematic, a close-up static shot frames the dark interior of a car, illuminated by daylight filtering through the windshield. The camera slowly tilts down and pushes in as the hand rotates the sneaker, revealing a silver heel panel with \"D'Lites\" written in cursive and a small silver \"S\" badge. The camera holds a static shot while the hand tilts the shoe back to expose the textured outsole. The camera then slowly pans right and tilts down as the focus slowly shifts, tracking the hand as it lowers the shoe toward the stationary foot. The camera settles into a static shot as the hand pauses.",
+          "full": "Cinematic, a close-up static shot frames the dark interior of a car, illuminated by daylight filtering through the windshield. The black dashboard and a circular air vent create a softly blurred background. In the center, a pale-skinned hand holds up a chunky Skechers sneaker. The shoe features a layered white and light grey upper, accented with metallic silver sweeping overlays. A silver \"S\" logo sits on the side, and a shiny silver flower charm adorns the white laces. It has a thick white midsole with silver pods and grey rubber tread. In the lower right, a foot wearing the matching shoe and a ribbed white crew sock rests on the floorboard. The hand gently tilts the shoe. The camera slowly tilts down and pushes in as the hand rotates the sneaker, revealing a silver heel panel with \"D'Lites\" written in cursive and a small silver \"S\" badge. The camera holds a static shot while the hand tilts the shoe back to expose the textured outsole. The camera then slowly pans right and tilts down as the focus slowly shifts, tracking the hand as it lowers the shoe toward the stationary foot. The camera settles into a static shot as the hand pauses."
+        },
+        {
+          "id": "gemini_vipe_text",
+          "name": "Gemini + ViPE 文本",
+          "summary": "静止 + 强烈抖动",
+          "camera": "Cinematic, in a close-up static shot, shaking strongly, a person's pale-skinned left hand holds a chunky white and silver sneaker in the foreground inside a car.",
+          "full": "Cinematic, in a close-up static shot, shaking strongly, a person's pale-skinned left hand holds a chunky white and silver sneaker in the foreground inside a car. The background reveals a dark dashboard, a circular air vent, and daylight visible through the windshield. The sneaker features a white mesh and leather upper, silver metallic side overlays, a thick white midsole with grey tread, and a metallic flower charm attached to the laces. A silver \"S\" logo adorns the side, and \"SKECHERS\" is molded into the midsole. The hand rotates the shoe to present its outer profile, turns it to display the silver heel panel with the text \"D'Lites\", and tilts it to expose the bottom tread. In the lower right midground, the person's right foot, wearing a thick white ribbed sock and the matching right sneaker, rests on the car's dark floor mat. The foot twitches slightly as the hand continues manipulating the held shoe under natural daylight."
+        },
+        {
+          "id": "gemini_vipe_plot",
+          "name": "Gemini + ViPE 轨迹图",
+          "summary": "轻微抖动 + 左摇 + 下俯",
+          "camera": "Cinematic, close-up, high-angle shot, the camera shakes slightly and pans left while tilting down to reveal the interior of a car.",
+          "full": "Cinematic, close-up, high-angle shot, the camera shakes slightly and pans left while tilting down to reveal the interior of a car. In the blurred background, a street with trees and parked cars is visible through the windshield, positioned above a black dashboard featuring a stitched texture and a circular silver-rimmed air vent on the right. In the center foreground, an off-screen person's pale-skinned left hand holds up a chunky Skechers sneaker. The shoe features a white upper made of layered leather and mesh, accented with sweeping metallic silver panels. A silver \"S\" logo sits mid-foot, and the word \"D'Lites\" is embroidered on the heel counter below a striped fabric pull tab. The sculpted white midsole has grey rubber traction pads and metallic silver inserts, while a silver flower charm sits on the white laces. The hand rotates the shoe, displaying its side profile, heel, and rugged grey outsole. In the lower right midground, the person's right foot rests on the dark floor mat, wearing the matching right sneaker over a thickly ribbed, cream-colored sock that bunches near the ankle. Natural daylight from outside the car casts soft highlights on the shoe's metallic details."
+        },
+        {
+          "id": "camdistill_only",
+          "name": "CamDistill 单独",
+          "summary": "静止 → 下俯 + 推近 → 静止 → 右摇 + 下俯 + 转焦 → 静止",
+          "camera": "0.0–3.0s Static Shot → 3.0–5.9s Tilt Down (slow) + Push In (slow) → 5.9–8.2s Static Shot → 8.2–10.3s Pan Right (slow) + Tilt Down (slow) + Focus Shift (slow) → 10.3–11.0s Static Shot",
+          "full": ""
+        },
+        {
+          "id": "vipe_only",
+          "name": "ViPE 单独",
+          "summary": "静止 + 强烈抖动",
+          "camera": "0.0–10.5s Static Shot；整体 Shake Strongly",
+          "full": ""
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "arm": "gemini_camdistill",
+        "scope": "camera_motion",
+        "source": "作者逐例人工确认",
+        "date": "2026-11-13"
+      }
+    }
+  ]
+}
